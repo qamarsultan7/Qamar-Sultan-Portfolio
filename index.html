@@ -83,7 +83,6 @@
                   clearInterval(animationInterval);
                   titleElement.textContent = text;
                   titleElement.classList.remove("glitching");
-
                   // Schedule next title
                   setTimeout(() => {
                     currentTitleIndex = (currentTitleIndex + 1) % titles.length;
@@ -186,11 +185,11 @@
             </a>
           </li>
 
-          <li class="social-item">
+          <!-- <li class="social-item">
             <a href="https://x.com/QamarSultan077" class="social-link">
               <ion-icon name="logo-twitter"></ion-icon>
             </a>
-          </li>
+          </li> -->
 
         </ul>
 
@@ -385,7 +384,11 @@
                 <img src="images/Flutter.svg" alt="client logo">
               </a>
             </li>
-
+            <li class="clients-item">
+              <a href="https://www.figma.com/" target="_blank">
+                <img src="images/python.svg" alt="client logo">
+              </a>
+            </li>
             <li class="clients-item">
               <a href="https://firebase.google.com/" target="_blank">
                 <img src="images/Firebase.svg" alt="client logo">
@@ -680,71 +683,55 @@
             <ul class="testimonials-items-list">
               <li class="testimonial-item" data-testimonials-item>
                 <div class="content-card">
-                  <figure class="testimonials-avatar-box" data-testimonials-avatar>
-                    <img src="images/avatar-1.png" alt="Daniel Lewis" width="60" data-testimonials-avatar>
-                  </figure>
-                  <h4 class="h4 testimonials-item-title" data-testimonials-title>Daniel Lewis</h4>
+                  <h4 class="h4 testimonials-item-title" data-testimonials-title style="text-align: center;">
+                    Daniel Lewis <span style="color: #a9afc3; font-size: 0.7em; font-weight: normal;">(Upwork
+                      Client)</span>
+                  </h4>
                   <div class="testimonials-text" data-testimonials-text>
-                    <p>amar was hired to create a mobile application for our startup. We were very pleased with the work
-                      Qamar was hired to create a mobile application for our startup. We were very pleased with the work
-                      done.s a lot of experience and is very concerned about the needs of client. The app was delivered
-                      He has a lot of experience and is very concerned about the needs of client. The app was delivered
-                      onme
-                      timeexceeded our expectations in terms of functionality and design.
-                      and exceeded our expectations in terms of functionality and design.
-                    </p>
+                    <p>I had a great working experience with Qamar and his team. He's outstanding in his work.</p>
+                  </div>
+                </div>
+              </li>
+              <!-- <li class="testimonial-item" data-testimonials-item>
+                <div class="content-card">
+                  <h4 class="h4 testimonials-item-title" data-testimonials-title style="text-align: center;">
+                    Jessica Miller <span style="color: #a9afc3; font-size: 0.7em; font-weight: normal;">(Mobile App
+                      Client)</span>
+                  </h4>
+                  <div class="testimonials-text" data-testimonials-text>
+                    <p>Working with Qamar was a great experience. His expertise in Flutter development helped us create
+                      a user-friendly and efficient application for our business. His communication was excellent
+                      throughout the project, and he was always open to feedback and quick to implement changes.</p>
                   </div>
                 </div>
               </li>
               <li class="testimonial-item" data-testimonials-item>
                 <div class="content-card">
-                  <figure class="testimonials-avatar-box" data-testimonials-avatar>
-                    <img src="images/avatar-2.png" alt="Jessica Miller" width="60" data-testimonials-avatar>
-                  </figure>
-                  <h4 class="h4 testimonials-item-title" data-testimonials-title>Jessica Miller</h4>
+                  <h4 class="h4 testimonials-item-title" data-testimonials-title style="text-align: center;">
+                    Emily Johnson <span style="color: #a9afc3; font-size: 0.7em; font-weight: normal;">(Startup
+                      Founder)</span>
+                  </h4>
                   <div class="testimonials-text" data-testimonials-text>
-                    <p>orking with Qamar was a great experience. His expertise in Flutter development helped us create a
-                      Working with Qamar was a great experience. His expertise in Flutter development helped us create a
-                      user-friendly and efficient application for our business. His communication was excellent
-                      throughoutt, and he was always open to feedback and quick to implement changes.
-                      the project, and he was always open to feedback and quick to implement changes.
-                    </p>
-                  </div>
-                </div>
-              </li>
-              <li class="testimonial-item" data-testimonials-item>
-                <div class="content-card">
-                  <figure class="testimonials-avatar-box" data-testimonials-avatar>
-                    <img src="images/avatar-3.png" alt="Emily Johnson" width="60" data-testimonials-avatar>
-                  </figure>
-                  <h4 class="h4 testimonials-item-title" data-testimonials-title>Emily Johnson</h4>
-                  <div class="testimonials-text" data-testimonials-text>
-                    <p>amar delivered a high-quality app that perfectly matched our requirements. His knowledge of both
-                      Qamar delivered a high-quality app that perfectly matched our requirements. His knowledge of both
+                    <p>Qamar delivered a high-quality app that perfectly matched our requirements. His knowledge of both
                       Flutter frontend and Django backend made the development process seamless. I was impressed by his
-                      attention to detail and ability to solve complex problems efficiently.
-                    </p>
+                      attention to detail and ability to solve complex problems efficiently.</p>
                   </div>
                 </div>
               </li>
               <li class="testimonial-item" data-testimonials-item>
                 <div class="content-card">
-                  <figure class="testimonials-avatar-box" data-testimonials-avatar>
-                    <img src="images/avatar-4.png" alt="Michael Chen" width="60" data-testimonials-avatar>
-                  </figure>
-                  <h4 class="h4 testimonials-item-title" data-testimonials-title>Michael Chen</h4>
+                  <h4 class="h4 testimonials-item-title" data-testimonials-title style="text-align: center;">
+                    Michael Chen <span style="color: #a9afc3; font-size: 0.7em; font-weight: normal;">(Tech Startup
+                      CEO)</span>
+                  </h4>
                   <div class="testimonials-text" data-testimonials-text>
-                    <p>s a tech startup, we needed someone who could quickly adapt to our changing requirements. Qamar
-                      As a tech startup, we needed someone who could quickly adapt to our changing requirements. Qamar
-                      noty
-                      onlyour expectations but exceeded them with his innovative solutions and technical expertise. His
-                      met our expectations but exceeded them with his innovative solutions and technical expertise. His
-                      workur mobile application has been instrumental in our growth.
-                      on our mobile application has been instrumental in our growth.
-                    </p>
+                    <p>As a tech startup, we needed someone who could quickly adapt to our changing requirements. Qamar
+                      not only met our expectations but exceeded them with his innovative solutions and technical
+                      expertise. His work on our mobile application has been instrumental in our growth.</p>
                   </div>
                 </div>
               </li>
+            -->
             </ul>
           </section>
         </div>
@@ -817,6 +804,11 @@
               width: 80%;
               margin: 0 0 10px 0;
             }
+          }
+
+          /* Center align testimonial titles */
+          .testimonials-item-title {
+            text-align: center;
           }
         </style>
 

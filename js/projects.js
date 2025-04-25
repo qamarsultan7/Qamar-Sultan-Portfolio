@@ -1,6 +1,15 @@
 // Project data model
 const projectsData = [
   {
+    id: 'ListlyPrime',
+    title: 'Listly Prime',
+    category: 'mobile apps',
+    image: 'images/Primely.png',
+    description: `Currently in development since April 2025, Listly Prime is a comprehensive real estate mobile app tailored for modern users 🏡📱. Built with Flutter using Bloc and a clean MVVM architecture, the app also leverages Django and Python for a powerful backend. Agents can easily list properties such as plots, villas, and houses, while users can explore estates based on their preferred location. A built-in chat system enables seamless communication between agents and buyers, creating a connected and intuitive property browsing experience 🗺️💬.`,
+    technologies: ['Flutter', 'Dart', 'Flutter Bloc',],
+    link: 'images/Primely.png'
+  },
+  {
     id: 'DesiresApp',
     title: 'Desires App',
     category: 'mobile apps',
@@ -10,13 +19,49 @@ const projectsData = [
     link: 'images/Desires.png'
   },
   {
+    id: 'AsaanKissan',
+    title: 'Asaan Kissan',
+    category: 'mobile apps',
+    image: 'images/Asan Kissan (Qamar).png',
+    description: `This e-commerce app was developed for a local client to help farmers sell their homemade and farm-grown products directly to customers 🌾🛍️. Built with Firebase on the backend 🔥, it supports multiple vendors, offers an admin panel for managing both buyers and sellers 🧑‍💼, and includes chat functionality for seamless communication between users, farmers, and administrators 💬. With a user-friendly design and smooth transaction flow, the app delivers a complete shopping experience in one place 📱.`,
+    technologies: ['Flutter', 'Dart', 'Provider',],
+    link: 'images/Asan Kissan (Qamar).png'
+  },
+  {
     id: 'ARSketch&DrawingApp',
     title: 'AR Sketch & Drawing App',
     category: 'mobile apps',
-    image: 'images/Desires.png',
+    image: 'images/Confidentiality.png',
     description: `The AR Sketch and Drawing app is built to inspire creativity and help users bring their art to life 🎨. Users can turn any image from their gallery into a sketch instantly 🖼️, and then switch to Paper Drawing Mode to sketch in real-time using their mobile camera ✏️📷. While sketching, they can also take pictures or record videos to capture their creative process 🎥. This app blends augmented reality with hands-on drawing for a fun and artistic experience ✨.`,
-    technologies: ['Flutter', 'Dart', 'Flutter Bloc', ],
-    link: 'images/Desires.png'
+    technologies: ['Flutter', 'Dart', 'Flutter Bloc',],
+    link: 'images/Confidentiality.png'
+  },
+  {
+    id: '2048Game',
+    title: '2048 Game',
+    category: 'mobile apps',
+    image: 'images/Confidentiality.png',
+    description: `Experience the classic charm of the addictive 2048 puzzle game like never before! 🎮 From December 2023 to January 2024, I developed a revamped version of the 2048 game with real-time multiplayer support, letting users compete head-to-head with friends or global players. The sleek and modern design enhances the gaming experience while maintaining the core thrill of merging tiles to reach the iconic 2048. 🧩✨`,
+    technologies: ['Flutter', 'Dart', 'Flutter Bloc', , 'Firebase', 'Notifications'],
+    link: 'images/Confidentiality.png'
+  },
+  {
+    id: 'LiveWeatherForecast',
+    title: 'Live Weather Forecast',
+    category: 'mobile apps',
+    image: 'images/weather app Qamar Sultan.jpg',
+    description: `This weather forecasting app, developed using Bloc for efficient state management, offers users accurate and real-time updates based on their location 🌤️. Designed between December 2023 and January 2024, the app integrates OpenWeatherMap API to ensure precise data delivery. With its minimalist UI and smooth user experience, checking weather updates becomes effortless and enjoyable. The blend of simplicity, responsiveness, and visual elegance makes it a go-to app for weather insights 🌦️📍.`,
+    technologies: ['Flutter', 'Dart', 'Flutter Bloc',],
+    link: 'images/weather app Qamar Sultan.jpg'
+  },
+  {
+    id: 'Wallpaper App',
+    title: 'Live Weather Forecast',
+    category: 'mobile apps',
+    image: 'images/weather app Qamar Sultan.jpg',
+    description: `Developed in October 2023, this sleek wallpaper app transforms your phone’s aesthetic with just one tap 🎨📱. Built using Flutter and the Pixels.com API, it follows a clean MVVM architecture with Provider for seamless state management. Users can effortlessly change their home or lock screen wallpapers, download stunning images directly to their device, and explore a variety of themed collections like trains, snowfall, and more 🌨️🚂. The app combines performance, personalization, and simplicity to elevate the visual experience.`,
+    technologies: ['Flutter', 'Dart', 'Provider', 'Rest Api'],
+    link: 'images/weather app Qamar Sultan.jpg'
   },
   // {
   //   id: 'houseman',
