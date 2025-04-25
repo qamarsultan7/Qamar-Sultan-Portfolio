@@ -1,125 +1,53 @@
 // Project data model
 const projectsData = [
   {
-    id: 'nagarikapp',
-    title: 'Nagarik App',
+    id: 'DesiresApp',
+    title: 'Desires App',
     category: 'mobile apps',
-    image: 'images/nagarikapp.png',
-    description: 'A comprehensive Flutter mobile application that serves as a digital identity platform for citizens. Features include digital ID, government services access, and secure user authentication.',
-    technologies: ['Flutter', 'Dart', 'Firebase', 'RESTful API'],
-    link: 'https://nagarikapp.gov.np/'
+    image: 'images/Desires.png',
+    description: `Desires is my all-time favorite project — a modern music streaming app that lets users stream songs from the internet and local storage 🎶. It includes the ability to add tracks to favorites 💖, get personalized song suggestions based on what's currently playing 🎧, and search globally for any music 🔍. Users can even download songs for offline playback so they can enjoy music anytime, anywhere 📥. Designed with a cool and simple UI 😎, the app uses Bloc for efficient and scalable state management ⚙️.`,
+    technologies: ['Flutter', 'Dart', 'Flutter Bloc', 'RESTful API', 'Notifications'],
+    link: 'images/Desires.png'
   },
   {
-    id: 'ambitionguru',
-    title: 'Ambition Guru',
+    id: 'ARSketch&DrawingApp',
+    title: 'AR Sketch & Drawing App',
     category: 'mobile apps',
-    image: 'images/ambitionguru.png',
-    description: 'An educational Flutter app designed to help students prepare for competitive exams. Includes features like practice tests, study materials, and performance tracking.',
-    technologies: ['Flutter', 'Firebase', 'Django REST API'],
-    link: 'https://www.ambition.guru/'
+    image: 'images/Desires.png',
+    description: `The AR Sketch and Drawing app is built to inspire creativity and help users bring their art to life 🎨. Users can turn any image from their gallery into a sketch instantly 🖼️, and then switch to Paper Drawing Mode to sketch in real-time using their mobile camera ✏️📷. While sketching, they can also take pictures or record videos to capture their creative process 🎥. This app blends augmented reality with hands-on drawing for a fun and artistic experience ✨.`,
+    technologies: ['Flutter', 'Dart', 'Flutter Bloc', ],
+    link: 'images/Desires.png'
   },
-  {
-    id: 'sociair',
-    title: 'Sociair',
-    category: 'mobile apps',
-    image: 'images/sociair.png',
-    description: 'A social networking app built with Flutter that helps users connect with like-minded individuals. Features image sharing, real-time chat, and personalized feeds.',
-    technologies: ['Flutter', 'Firebase', 'Cloud Functions'],
-    link: 'https://play.google.com/store/apps/details?id=com.onewinme.sociair'
-  },
-  {
-    id: 'tokma',
-    title: 'Tokma',
-    category: 'mobile apps',
-    image: 'images/tokma.png',
-    description: 'An AI-powered chat application that provides intelligent responses to user queries. Built with Flutter and integrated with advanced NLP systems.',
-    technologies: ['Flutter', 'AI/ML', 'Django Backend'],
-    link: 'https://tokma.ai/'
-  },
-  {
-    id: 'saara',
-    title: 'Saara',
-    category: 'mobile apps',
-    image: 'images/saara.png',
-    description: 'A fashion e-commerce application with features like product browsing, cart management, wishlist, and secure payment processing.',
-    technologies: ['Flutter', 'Firebase', 'Payment Gateway Integration'],
-    link: 'https://play.google.com/store/apps/details?id=com.inflancer.saara'
-  },
-  {
-    id: 'ifood',
-    title: 'iFood',
-    category: 'mobile apps',
-    image: 'images/ifood.png',
-    description: 'A food delivery app with features for ordering food from local restaurants, tracking delivery, and payment processing. Includes both customer and restaurant management interfaces.',
-    technologies: ['Flutter', 'Firebase', 'Google Maps API'],
-    link: './assets/projects/ifood.png'
-  },
-  {
-    id: 'merodate',
-    title: 'MeroDate',
-    category: 'mobile apps',
-    image: 'images/merodate.png',
-    description: 'A dating application with features like user matching, chat, profile customization, and location-based matching.',
-    technologies: ['Flutter', 'Firebase', 'Geolocation API'],
-    link: './assets/projects/merodate.png'
-  },
-  {
-    id: 'weatherapp',
-    title: 'Weather App',
-    category: 'mobile apps',
-    image: 'images/weatherapp.png',
-    description: 'A weather forecasting app that provides current weather conditions and forecasts for multiple locations. Features include weather alerts and detailed meteorological data.',
-    technologies: ['Flutter', 'Weather API', 'Geolocation'],
-    link: './assets/projects/weatherapp.png'
-  },
-  {
-    id: 'musicapp',
-    title: 'Music App',
-    category: 'mobile apps',
-    image: 'images/music.png',
-    description: 'A music streaming application with features like playlists, favorite tracks, music discovery, and offline playback.',
-    technologies: ['Flutter', 'Audio Processing', 'Firebase'],
-    link: './assets/projects/music.png'
-  },
-  {
-    id: 'movieapp',
-    title: 'Movie App',
-    category: 'mobile apps',
-    image: 'images/movieapp.png',
-    description: 'A movie browsing and recommendation app with features like movie details, trailers, ratings, and personalized recommendations.',
-    technologies: ['Flutter', 'TMDb API', 'Firebase'],
-    link: './assets/projects/movieapp.png'
-  },
-  {
-    id: 'houseman',
-    title: 'Houseman',
-    category: 'ai/ml',
-    image: 'images/houseman.png',
-    description: 'A real estate management application UI design with features for property listing, tenant management, and maintenance requests.',
-    technologies: ['Python', 'Langchain', 'OpenAI API'],
-    link: './assets/projects/houseman.png'
-  }
+  // {
+  //   id: 'houseman',
+  //   title: 'Houseman',
+  //   category: 'ai/ml',
+  //   image: 'images/houseman.png',
+  //   description: 'A real estate management application UI design with features for property listing, tenant management, and maintenance requests.',
+  //   technologies: ['Python', 'Langchain', 'OpenAI API'],
+  //   link: './assets/projects/houseman.png'
+  // }
 ];
 
 // Function to handle project filtering
 function setupProjectFilters() {
   const filterButtons = document.querySelectorAll('[data-filter-btn]');
   const selectItems = document.querySelectorAll('[data-select-item]');
-  
+
   // Function to filter projects by category
   function filterProjects(category) {
     const projectItems = document.querySelectorAll('.project-item');
-    
+
     projectItems.forEach(item => {
       // Get the category from the data attribute (case-insensitive comparison)
       let itemCategory = item.getAttribute('data-category');
-      
+
       if (!itemCategory) return;
-      
+
       // Make comparison case-insensitive
       itemCategory = itemCategory.toLowerCase();
       const filterCategory = category.toLowerCase();
-      
+
       // Show all items if "All" is selected, otherwise filter by category
       if (filterCategory === 'all' || itemCategory === filterCategory) {
         item.classList.add('active');
@@ -127,44 +55,44 @@ function setupProjectFilters() {
         item.classList.remove('active');
       }
     });
-    
+
     // Check if any projects are visible and show/hide "no projects" message
     checkVisibleProjects();
   }
-  
+
   // Set up filter button click handlers
   filterButtons.forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
       // Get the text content of the button as the category
       const category = this.textContent.trim();
-      
+
       // Update active state on buttons
       document.querySelector('[data-filter-btn].active')?.classList.remove('active');
       this.classList.add('active');
-      
+
       // Update the select value for mobile dropdown
       const selectValue = document.querySelector('[data-selecct-value]');
       if (selectValue) {
         selectValue.textContent = category;
       }
-      
+
       // Filter the projects
       filterProjects(category);
     });
   });
-  
+
   // Set up select item handlers for mobile dropdown
   selectItems.forEach(item => {
-    item.addEventListener('click', function() {
+    item.addEventListener('click', function () {
       // Get the text content of the button as the category
       const category = this.textContent.trim();
-      
+
       // Update the select value
       const selectValue = document.querySelector('[data-selecct-value]');
       if (selectValue) {
         selectValue.textContent = category;
       }
-      
+
       // Find and trigger the corresponding filter button
       filterButtons.forEach(btn => {
         if (btn.textContent.trim().toLowerCase() === category.toLowerCase()) {
@@ -186,22 +114,22 @@ function normalizeCategory(category) {
 // Modify generateProjectItems function to use normalized categories
 function generateProjectItems() {
   const projectList = document.getElementById('dynamic-project-list');
-  
+
   // Clear existing items
   if (projectList) {
     projectList.innerHTML = '';
-    
+
     // Generate items from projectsData
     projectsData.forEach((project) => {
       const listItem = document.createElement('li');
       listItem.className = 'project-item active';
       listItem.setAttribute('data-filter-item', '');
-      
+
       // Normalize category for consistent filtering
       const normalizedCategory = normalizeCategory(project.category);
       listItem.setAttribute('data-category', normalizedCategory);
       listItem.setAttribute('data-project-id', project.id);
-      
+
       // Create project item HTML
       listItem.innerHTML = `
         <a href="${project.link}" target="_blank">
@@ -215,10 +143,10 @@ function generateProjectItems() {
           <p class="project-category">${project.category.charAt(0).toUpperCase() + project.category.slice(1)}</p>
         </a>
       `;
-      
+
       projectList.appendChild(listItem);
     });
-    
+
     // Setup event listeners for the newly created items
     setupProjectItems();
   }
@@ -318,10 +246,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Generate project items
   generateProjectItems();
-  
+
   // Set up project filters
   setupProjectFilters();
-  
+
   // Add "no projects" message element if it doesn't exist
   if (!document.querySelector('.no-projects-message')) {
     const portfolioSection = document.querySelector('.projects');
@@ -334,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
     noProjectsMsg.style.fontSize = '18px';
     noProjectsMsg.style.color = 'var(--light-gray)';
     noProjectsMsg.style.fontWeight = '500';
-    
+
     // Insert after the filter list
     const projectList = document.querySelector('.project-list');
     if (projectList && portfolioSection) {
@@ -350,7 +278,7 @@ function setupProjectItems() {
   projectItems.forEach((item) => {
     const projectId = item.getAttribute('data-project-id');
     if (!projectId) return;
-    
+
     const project = projectsData.find(p => p.id === projectId);
     if (!project) return;
 
@@ -431,9 +359,9 @@ function closeProjectModal() {
 function checkVisibleProjects() {
   const projectItems = document.querySelectorAll('.project-item.active');
   const noProjectsMsg = document.querySelector('.no-projects-message');
-  
+
   if (!noProjectsMsg) return;
-  
+
   if (projectItems.length === 0) {
     noProjectsMsg.style.display = 'block';
   } else {
