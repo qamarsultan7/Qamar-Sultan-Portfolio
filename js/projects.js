@@ -58,10 +58,10 @@ const projectsData = [
     id: 'Wallpaper App',
     title: 'Live Weather Forecast',
     category: 'mobile apps',
-    image: 'images/weather app Qamar Sultan.jpg',
+    image: 'images/Wallaper App Mockup.png',
     description: `Developed in October 2023, this sleek wallpaper app transforms your phone’s aesthetic with just one tap 🎨📱. Built using Flutter and the Pixels.com API, it follows a clean MVVM architecture with Provider for seamless state management. Users can effortlessly change their home or lock screen wallpapers, download stunning images directly to their device, and explore a variety of themed collections like trains, snowfall, and more 🌨️🚂. The app combines performance, personalization, and simplicity to elevate the visual experience.`,
     technologies: ['Flutter', 'Dart', 'Provider', 'Rest Api'],
-    link: 'images/weather app Qamar Sultan.jpg'
+    link: 'images/Wallaper App Mockup.png'
   },
   // {
   //   id: 'houseman',
