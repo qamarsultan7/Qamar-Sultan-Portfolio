@@ -327,24 +327,73 @@ function setupProjectItems() {
     const project = projectsData.find(p => p.id === projectId);
     if (!project) return;
 
-    // Find the project link and add event listener
+    // Find the project link and image
     const projectLink = item.querySelector('a');
-    if (projectLink) {
+    const projectImg = item.querySelector('.project-img');
+
+    if (projectLink && projectImg) {
       // Remove any existing event listeners first (to prevent duplicates)
       const newProjectLink = projectLink.cloneNode(true);
       projectLink.parentNode.replaceChild(newProjectLink, projectLink);
 
-      // Add click and touch events
+      // Variables to track touch events
+      let touchStartX = 0;
+      let touchStartY = 0;
+      let touchStartTime = 0;
+      let isScrolling = false;
+
+      // Prevent the link's default action
       newProjectLink.addEventListener('click', function (e) {
         e.preventDefault();
-        openProjectModal(projectId);
       });
 
-      // Ensure mobile touch events work properly
-      newProjectLink.addEventListener('touchend', function (e) {
-        e.preventDefault();
-        openProjectModal(projectId);
-      });
+      // Add specific click handler to just the image element
+      const imgElement = newProjectLink.querySelector('.project-img');
+
+      if (imgElement) {
+        // Handle touch start
+        imgElement.addEventListener('touchstart', function (e) {
+          touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
+          touchStartTime = Date.now();
+          isScrolling = false;
+        }, { passive: true });
+
+        // Detect scrolling
+        imgElement.addEventListener('touchmove', function (e) {
+          if (!isScrolling) {
+            const diffX = Math.abs(e.touches[0].clientX - touchStartX);
+            const diffY = Math.abs(e.touches[0].clientY - touchStartY);
+
+            // If vertical movement is greater than horizontal, it's likely scrolling
+            if (diffY > 10 || diffX > 10) {
+              isScrolling = true;
+            }
+          }
+        }, { passive: true });
+
+        // Handle touch end - only open modal if it was a tap, not a scroll
+        imgElement.addEventListener('touchend', function (e) {
+          const touchEndTime = Date.now();
+          const touchDuration = touchEndTime - touchStartTime;
+
+          // Only consider it a tap if:
+          // 1. Not detected as scrolling
+          // 2. Touch duration was short (less than 200ms is a tap)
+          // 3. Didn't move far from start position
+          if (!isScrolling && touchDuration < 200) {
+            e.preventDefault();
+            openProjectModal(projectId);
+          }
+        });
+
+        // For desktop/mouse clicks
+        imgElement.addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          openProjectModal(projectId);
+        });
+      }
 
       // Add aria attributes for accessibility
       newProjectLink.setAttribute('aria-label', `View details of ${project.title} project`);
