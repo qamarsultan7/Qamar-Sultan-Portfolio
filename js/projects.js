@@ -16,7 +16,7 @@ const projectsData = [
     image: 'images/Desires.png',
     description: `Desires is my all-time favorite project — a modern music streaming app that lets users stream songs from the internet and local storage 🎶. It includes the ability to add tracks to favorites 💖, get personalized song suggestions based on what's currently playing 🎧, and search globally for any music 🔍. Users can even download songs for offline playback so they can enjoy music anytime, anywhere 📥. Designed with a cool and simple UI 😎, the app uses Bloc for efficient and scalable state management ⚙️.`,
     technologies: ['Flutter', 'Dart', 'Flutter Bloc', 'RESTful API', 'Notifications'],
-    link: 'images/Desires.png'
+    link: 'https://drive.google.com/file/d/1MaTD3M2ni01lvLzJZtK9fBlFI6vUPSEh/view?usp=sharing'
   },
   {
     id: 'AsaanKissan',
