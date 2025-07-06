@@ -5,8 +5,14 @@ const projectsData = [
     title: 'Listly Prime',
     category: 'mobile apps',
     image: 'images/Primely.png',
-    description: `Currently in development since April 2025, Listly Prime is a comprehensive real estate mobile app tailored for modern users 🏡📱. Built with Flutter using Bloc and a clean MVVM architecture, the app also leverages Django and Python for a powerful backend. Agents can easily list properties such as plots, villas, and houses, while users can explore estates based on their preferred location. A built-in chat system enables seamless communication between agents and buyers, creating a connected and intuitive property browsing experience 🗺️💬.`,
-    technologies: ['Flutter', 'Dart', 'Flutter Bloc',],
+    description: `Currently in development.
+A comprehensive real estate mobile app tailored for modern users.
+Built with Flutter using Bloc and a clean MVVM architecture.
+Uses Django and Python for a powerful backend.
+Agents can list properties such as plots, villas, and houses.
+Users can explore estates based on their preferred location.
+Includes a built-in chat system for communication between agents and buyers.`,
+    technologies: ['Flutter', 'Dart', 'Flutter Bloc'],
     link: 'images/Primely.png'
   },
   {
@@ -14,7 +20,13 @@ const projectsData = [
     title: 'Desires App',
     category: 'mobile apps',
     image: 'images/Desires.png',
-    description: `Desires is my all-time favorite project — a modern music streaming app that lets users stream songs from the internet and local storage 🎶. It includes the ability to add tracks to favorites 💖, get personalized song suggestions based on what's currently playing 🎧, and search globally for any music 🔍. Users can even download songs for offline playback so they can enjoy music anytime, anywhere 📥. Designed with a cool and simple UI 😎, the app uses Bloc for efficient and scalable state management ⚙️.`,
+    description: `A modern music streaming app for streaming songs from the internet and local storage.
+Allows adding tracks to favorites.
+Provides personalized song suggestions based on what's currently playing.
+Includes global search functionality for any music.
+Notifications control.
+Designed with a cool and simple UI.
+Uses Bloc for scalable state management.`,
     technologies: ['Flutter', 'Dart', 'Flutter Bloc', 'RESTful API', 'Notifications'],
     link: 'https://drive.google.com/file/d/1MaTD3M2ni01lvLzJZtK9fBlFI6vUPSEh/view?usp=sharing'
   },
@@ -23,17 +35,25 @@ const projectsData = [
     title: 'Asaan Kissan',
     category: 'mobile apps',
     image: 'images/Asan Kissan (Qamar).png',
-    description: `This e-commerce app was developed for a local client to help farmers sell their homemade and farm-grown products directly to customers 🌾🛍️. Built with Firebase on the backend 🔥, it supports multiple vendors, offers an admin panel for managing both buyers and sellers 🧑‍💼, and includes chat functionality for seamless communication between users, farmers, and administrators 💬. With a user-friendly design and smooth transaction flow, the app delivers a complete shopping experience in one place 📱.`,
-    technologies: ['Flutter', 'Dart', 'Provider',],
-    link: 'images/Asan Kissan (Qamar).png'
+    description: `E-commerce app for farmers to sell homemade and farm-grown products.
+Built with Firebase on the backend.
+Supports multiple vendors with an admin panel for managing buyers and sellers.
+Includes chat functionality for communication between users, farmers, and administrators.
+Provides a user-friendly design and smooth transaction flow.`,
+    technologies: ['Flutter', 'Dart', 'Provider'],
+    link: 'https://drive.google.com/file/d/1AzYKd6t1ZiRl7jvXhVMBJ-BHX6PxOWuN/view?usp=sharing'
   },
   {
     id: 'ARSketch&DrawingApp',
     title: 'AR Sketch & Drawing App',
     category: 'mobile apps',
     image: 'images/Confidentiality.png',
-    description: `The AR Sketch and Drawing app is built to inspire creativity and help users bring their art to life 🎨. Users can turn any image from their gallery into a sketch instantly 🖼️, and then switch to Paper Drawing Mode to sketch in real-time using their mobile camera ✏️📷. While sketching, they can also take pictures or record videos to capture their creative process 🎥. This app blends augmented reality with hands-on drawing for a fun and artistic experience ✨.`,
-    technologies: ['Flutter', 'Dart', 'Flutter Bloc',],
+    description: `Built to inspire creativity and help users bring their art to life.
+Instantly turn any image from the gallery into a sketch.
+Includes a Paper Drawing Mode for real-time sketching using the mobile camera.
+Allows taking pictures or recording videos while sketching.
+Blends augmented reality with hands-on drawing for an artistic experience.`,
+    technologies: ['Flutter', 'Dart', 'Flutter Bloc'],
     link: 'images/Confidentiality.png'
   },
   {
@@ -41,8 +61,11 @@ const projectsData = [
     title: '2048 Game',
     category: 'mobile apps',
     image: 'images/Confidentiality.png',
-    description: `Experience the classic charm of the addictive 2048 puzzle game like never before! 🎮 From December 2023 to January 2024, I developed a revamped version of the 2048 game with real-time multiplayer support, letting users compete head-to-head with friends or global players. The sleek and modern design enhances the gaming experience while maintaining the core thrill of merging tiles to reach the iconic 2048. 🧩✨`,
-    technologies: ['Flutter', 'Dart', 'Flutter Bloc', , 'Firebase', 'Notifications'],
+    description: `A revamped version of the 2048 puzzle game with real-time multiplayer support.
+Lets users compete head-to-head with friends or global players.
+Features a sleek and modern design while maintaining the core gameplay.
+Developed between December 2023 and January 2024.`,
+    technologies: ['Flutter', 'Dart', 'Flutter Bloc', 'Firebase', 'Notifications'],
     link: 'images/Confidentiality.png'
   },
   {
@@ -50,29 +73,29 @@ const projectsData = [
     title: 'Live Weather Forecast',
     category: 'mobile apps',
     image: 'images/weather app Qamar Sultan.jpg',
-    description: `This weather forecasting app, developed using Bloc for efficient state management, offers users accurate and real-time updates based on their location 🌤️. Designed between December 2023 and January 2024, the app integrates OpenWeatherMap API to ensure precise data delivery. With its minimalist UI and smooth user experience, checking weather updates becomes effortless and enjoyable. The blend of simplicity, responsiveness, and visual elegance makes it a go-to app for weather insights 🌦️📍.`,
-    technologies: ['Flutter', 'Dart', 'Flutter Bloc',],
-    link: 'images/weather app Qamar Sultan.jpg'
+    description: `Weather forecasting app with accurate and real-time updates based on location.
+Uses Bloc for efficient state management.
+Integrates OpenWeatherMap API for precise data delivery.
+Features a minimalist UI and smooth user experience.
+Developed between December 2023 and January 2024.`,
+    technologies: ['Flutter', 'Dart', 'Flutter Bloc'],
+    link: 'https://drive.google.com/file/d/1GHxCTAeR8tRJuosfL0C_6A-Td4b7CGuX/view?usp=sharing'
   },
   {
     id: 'Wallpaper App',
     title: 'Live Weather Forecast',
     category: 'mobile apps',
     image: 'images/Wallaper App Mockup.png',
-    description: `Developed in October 2023, this sleek wallpaper app transforms your phone’s aesthetic with just one tap 🎨📱. Built using Flutter and the Pixels.com API, it follows a clean MVVM architecture with Provider for seamless state management. Users can effortlessly change their home or lock screen wallpapers, download stunning images directly to their device, and explore a variety of themed collections like trains, snowfall, and more 🌨️🚂. The app combines performance, personalization, and simplicity to elevate the visual experience.`,
+    description: `Sleek wallpaper app developed in October 2023.
+Allows changing wallpapers with one tap.
+Built with Flutter and the Pixels.com API using clean MVVM architecture.
+Uses Provider for state management.
+Supports downloading images and exploring themed collections like trains and snowfall.`,
     technologies: ['Flutter', 'Dart', 'Provider', 'Rest Api'],
-    link: 'images/Wallaper App Mockup.png'
-  },
-  // {
-  //   id: 'houseman',
-  //   title: 'Houseman',
-  //   category: 'ai/ml',
-  //   image: 'images/houseman.png',
-  //   description: 'A real estate management application UI design with features for property listing, tenant management, and maintenance requests.',
-  //   technologies: ['Python', 'Langchain', 'OpenAI API'],
-  //   link: './assets/projects/houseman.png'
-  // }
+    link: 'https://drive.google.com/file/d/1F7ByrvqbPlDAb7t1QXfRHfv77Wlm-gvT/view?usp=sharing'
+  }
 ];
+
 
 // Function to handle project filtering
 function setupProjectFilters() {
