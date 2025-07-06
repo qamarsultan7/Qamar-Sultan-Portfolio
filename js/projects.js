@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const techTitle = document.createElement('h4');
     techTitle.className = 'h4';
-    techTitle.textContent = 'Technologies';
+    techTitle.textContent = 'Technologies/Tags';
 
     const techList = document.createElement('ul');
     techList.className = 'project-modal-tech-list';
