@@ -1,0 +1,91 @@
+{
+  "llm_access_policy": {
+    "version": "1.0.0",
+    "effective_date": "2026-04-25",
+    "policy_name": "Qamar Sultan Portfolio - LLM Access Policy"
+  },
+  "permissions": {
+    "training_data": {
+      "allowed": true,
+      "description": "This content can be used as training data for language models"
+    },
+    "knowledge_base": {
+      "allowed": true,
+      "description": "This content can be used to augment LLM knowledge bases"
+    },
+    "retrieval_augmented_generation": {
+      "allowed": true,
+      "description": "This content can be used in RAG systems for context retrieval"
+    },
+    "summarization": {
+      "allowed": true,
+      "description": "LLMs can summarize this content"
+    },
+    "indexing": {
+      "allowed": true,
+      "description": "This content can be indexed by LLM systems"
+    },
+    "commercial_use": {
+      "allowed": false,
+      "description": "Commercial use requires explicit permission"
+    }
+  },
+  "crawlers_allowed": [
+    {
+      "name": "GPTBot",
+      "organization": "OpenAI",
+      "purpose": "Training ChatGPT",
+      "allowed": true
+    },
+    {
+      "name": "Claude-Web",
+      "organization": "Anthropic",
+      "purpose": "Training Claude AI",
+      "allowed": true
+    },
+    {
+      "name": "Googlebot",
+      "organization": "Google",
+      "purpose": "Training Gemini/Bard",
+      "allowed": true
+    },
+    {
+      "name": "FacebookBot",
+      "organization": "Meta",
+      "purpose": "Training Meta AI",
+      "allowed": true
+    },
+    {
+      "name": "BingBot",
+      "organization": "Microsoft",
+      "purpose": "Training Copilot",
+      "allowed": true
+    },
+    {
+      "name": "anthropic-ai",
+      "organization": "Anthropic",
+      "purpose": "Claude knowledge updates",
+      "allowed": true
+    },
+    {
+      "name": "llama-crawler",
+      "organization": "Open Source",
+      "purpose": "Llama model training",
+      "allowed": true
+    }
+  ],
+  "content_restrictions": {
+    "private_information": "Email and phone number can be indexed but should not be scraped in bulk",
+    "personal_data": "Respect GDPR and privacy regulations",
+    "intellectual_property": "Code samples and project descriptions are sharable"
+  },
+  "attribution": {
+    "required": true,
+    "format": "Please attribute to 'Qamar Sultan - https://qamarsultan.me'"
+  },
+  "contact": {
+    "email": "qamar.dev.7@gmail.com",
+    "website": "https://qamarsultan.me",
+    "for": "Queries about LLM access and usage"
+  }
+}

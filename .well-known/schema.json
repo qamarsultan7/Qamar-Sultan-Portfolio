@@ -1,0 +1,61 @@
+{
+  "@context": "https://schema.org/",
+  "@type": "Person",
+  "name": "Qamar Sultan",
+  "url": "https://qamarsultan.me",
+  "email": "qamar.dev.7@gmail.com",
+  "telephone": "+923194414534",
+  "image": "https://qamarsultan.me/images/my-avatar.jpeg",
+  "description": "Professional Flutter Developer, Django Backend Engineer, and AI Enthusiast",
+  "sameAs": [
+    "https://www.linkedin.com/in/qamar-sultan07",
+    "https://github.com/qamarsultan7",
+    "https://g.dev/qamarsultan"
+  ],
+  "jobTitle": [
+    "Flutter Developer",
+    "Django Developer",
+    "Software Engineer",
+    "Full Stack Developer"
+  ],
+  "skills": [
+    "Flutter",
+    "Dart",
+    "Python",
+    "Django",
+    "REST APIs",
+    "Mobile Development",
+    "Cross-platform Development",
+    "Backend Development",
+    "UI/UX",
+    "State Management",
+    "Database Design",
+    "API Integration",
+    "Firebase",
+    "Git",
+    "Agile Methodology",
+    "Problem Solving",
+    "Team Collaboration"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Freelance"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Sargodha",
+    "addressRegion": "Punjab",
+    "addressCountry": "PK"
+  },
+  "knowsAbout": [
+    "Mobile Application Development",
+    "Backend API Development",
+    "Cross-platform Applications",
+    "Database Management",
+    "Software Architecture",
+    "Performance Optimization",
+    "Debugging and Testing",
+    "Artificial Intelligence",
+    "Machine Learning Basics"
+  ]
+}

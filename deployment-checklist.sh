@@ -1,0 +1,65 @@
+#!/bin/bash
+# deployment-checklist.sh
+# Deploy your LLM-accessible portfolio to production
+
+echo "🚀 Portfolio Deployment Checklist"
+echo "=================================="
+echo ""
+
+echo "✅ Step 1: Files to Upload"
+echo "   - index.html (updated with LLM meta tags)"
+echo "   - robots.txt (with LLM crawlers allowed)"
+echo "   - sitemap.xml"
+echo "   - .htaccess"
+echo "   - css/style.css"
+echo "   - js/*.js"
+echo "   - images/* (all image files)"
+echo ""
+
+echo "✅ Step 2: Create .well-known Directory"
+echo "   Run on your server: mkdir -p .well-known"
+echo "   Upload these files to .well-known/:"
+echo "   - ai.json"
+echo "   - schema.json"
+echo "   - llm-access.json"
+echo ""
+
+echo "✅ Step 3: Verify Accessible URLs"
+echo "   After upload, test these URLs:"
+echo "   - https://qamarsultan.me/robots.txt"
+echo "   - https://qamarsultan.me/sitemap.xml"
+echo "   - https://qamarsultan.me/.well-known/ai.json"
+echo "   - https://qamarsultan.me/.well-known/schema.json"
+echo "   - https://qamarsultan.me/.well-known/llm-access.json"
+echo ""
+
+echo "✅ Step 4: Google Search Console"
+echo "   1. Add property: https://qamarsultan.me/"
+echo "   2. Verify ownership"
+echo "   3. Submit sitemap: https://qamarsultan.me/sitemap.xml"
+echo "   4. Request indexing"
+echo ""
+
+echo "✅ Step 5: Verify LLM Access"
+echo "   These crawlers should now be able to access your site:"
+echo "   - GPTBot (OpenAI)"
+echo "   - Claude-Web (Anthropic)"
+echo "   - GoogleBot (Google Gemini)"
+echo "   - FacebookBot (Meta AI)"
+echo "   - BingBot (Microsoft Copilot)"
+echo ""
+
+echo "✅ Step 6: Check Server Logs"
+echo "   Monitor logs for crawlers:"
+echo "   grep -i 'GPTBot\\|Claude-Web\\|Googlebot' /var/log/access.log"
+echo ""
+
+echo "✅ Step 7: Wait for Indexing"
+echo "   Timeline:"
+echo "   - Immediate: .well-known files accessible"
+echo "   - 24-48 hours: LLM crawlers begin indexing"
+echo "   - 1-2 weeks: Full integration into LLM knowledge bases"
+echo ""
+
+echo "🎉 Your portfolio is now LLM-accessible!"
+echo "=================================="

@@ -1,0 +1,65 @@
+{
+  "title": "Qamar Sultan - Portfolio & Professional Profile",
+  "description": "Professional portfolio and profile for Qamar Sultan, a Flutter and Django software developer",
+  "namespace": "com.example.portfolio",
+  "version": "1.0.0",
+  "created": "2026-04-25",
+  "updated": "2026-04-25",
+  "author": {
+    "name": "Qamar Sultan",
+    "email": "qamar.dev.7@gmail.com",
+    "website": "https://qamarsultan.me",
+    "github": "https://github.com/qamarsultan7",
+    "linkedin": "https://www.linkedin.com/in/qamar-sultan07",
+    "location": "Sargodha, Pakistan"
+  },
+  "licensing": {
+    "source_code": "MIT",
+    "content": "CC-BY-4.0"
+  },
+  "access_policies": {
+    "allow_training": true,
+    "allow_indexing": true,
+    "allow_scraping": true,
+    "allow_llm_access": true,
+    "ai_bots_allowed": [
+      "GPTBot",
+      "Claude-Web",
+      "Googlebot",
+      "FacebookBot",
+      "BingBot",
+      "Copilot",
+      "anthropic-ai",
+      "llama-crawler"
+    ]
+  },
+  "content_types": {
+    "resume": true,
+    "portfolio": true,
+    "professional_profile": true,
+    "contact_information": true,
+    "work_samples": false,
+    "private_information": false
+  },
+  "use_cases": [
+    "Professional networking",
+    "Recruitment and hiring",
+    "AI model training",
+    "LLM knowledge base",
+    "Portfolio discovery",
+    "Professional research"
+  ],
+  "restrictions": {
+    "do_not": [
+      "Use for commercial purposes without permission",
+      "Redistribute contact information",
+      "Create competing portfolios",
+      "Misrepresent qualifications"
+    ]
+  },
+  "endpoints": {
+    "homepage": "https://qamarsultan.me/",
+    "api_docs": null,
+    "contact": "qamar.dev.7@gmail.com"
+  }
+}

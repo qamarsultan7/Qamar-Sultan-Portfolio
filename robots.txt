@@ -1,0 +1,52 @@
+# Robots.txt for qamarsultan.me
+# This file tells search engines and LLMs how to crawl and index the site
+
+User-agent: *
+Allow: /
+Disallow: /cdn-cgi/
+
+# Allow search engines to crawl everything
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Allow LLM crawlers to access all content
+# OpenAI GPT Bot
+User-agent: GPTBot
+Allow: /
+Disallow: /private/
+
+# Anthropic Claude
+User-agent: Claude-Web
+Allow: /
+Disallow: /private/
+
+# Google Gemini & Bard
+User-agent: GoogleOther
+Allow: /
+
+# Meta AI
+User-agent: FacebookBot
+Allow: /
+
+# Other LLM crawlers
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: llama-crawler
+Allow: /
+
+# Specify sitemap location
+Sitemap: https://qamarsultan.me/sitemap.xml
+
+# Standard crawl delay settings
+Crawl-delay: 1
+Request-rate: 30/60
+
+# Block bad/malicious bots
+User-agent: MJ12bot
+User-agent: AhrefsBot
+User-agent: SemrushBot
+Disallow: /
