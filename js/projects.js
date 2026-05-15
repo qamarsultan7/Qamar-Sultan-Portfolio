@@ -3,7 +3,7 @@ const projectsData = [
   {
     id: 'CalEye',
     title: 'CalEye',
-    category: 'mobile apps',
+    categories: ['Mobile app', 'Backend development'],
     image: 'images/CalEye.png',
     description: `Live on Google Play Store.
 An AI-powered nutrition tracker built for precision and a premium user experience.
@@ -18,7 +18,7 @@ Boosted Regional Dish detection accuracy by 15%.`,
   {
     id: 'ListlyPrime',
     title: 'Listly Prime',
-    category: 'mobile apps',
+    categories: ['Mobile app', 'Backend development'],
     image: 'images/Primely.png',
     description: `Currently in development.
 A comprehensive real estate mobile app tailored for modern users.
@@ -33,7 +33,7 @@ Includes a built-in chat system for communication between agents and buyers.`,
   {
     id: 'DesiresApp',
     title: 'Desires App',
-    category: 'mobile apps',
+    categories: ['Mobile app'],
     image: 'images/Desires.png',
     description: `A modern music streaming app for streaming songs from the internet and local storage.
 Allows adding tracks to favorites.
@@ -48,7 +48,7 @@ Uses Bloc for scalable state management.`,
   {
     id: 'AsaanKissan',
     title: 'Asaan Kissan',
-    category: 'mobile apps',
+    categories: ['Mobile app', 'backend development'],
     image: 'images/Asan Kissan (Qamar).png',
     description: `E-commerce app for farmers to sell homemade and farm-grown products.
 Built with Firebase on the backend.
@@ -61,7 +61,7 @@ Provides a user-friendly design and smooth transaction flow.`,
   {
     id: 'ARSketch&DrawingApp',
     title: 'AR Sketch & Drawing App',
-    category: 'mobile apps',
+    categories: ['Mobile app'],
     image: 'images/Confidentiality.png',
     description: `Built to inspire creativity and help users bring their art to life.
 Instantly turn any image from the gallery into a sketch.
@@ -74,7 +74,7 @@ Blends augmented reality with hands-on drawing for an artistic experience.`,
   {
     id: '2048Game',
     title: '2048 Game',
-    category: 'mobile apps',
+    categories: ['Mobile app'],
     image: 'images/Confidentiality.png',
     description: `A revamped version of the 2048 puzzle game with real-time multiplayer support.
 Lets users compete head-to-head with friends or global players.
@@ -86,7 +86,7 @@ Developed between December 2023 and January 2024.`,
   {
     id: 'LiveWeatherForecast',
     title: 'Live Weather Forecast',
-    category: 'mobile apps',
+    categories: ['Mobile app'],
     image: 'images/weather app Qamar Sultan.jpg',
     description: `Weather forecasting app with accurate and real-time updates based on location.
 Uses Bloc for efficient state management.
@@ -99,7 +99,7 @@ Developed between December 2023 and January 2024.`,
   {
     id: 'Wallpaper App',
     title: 'Live Weather Forecast',
-    category: 'mobile apps',
+    categories: ['Mobile app'],
     image: 'images/Wallaper App Mockup.png',
     description: `Sleek wallpaper app developed in October 2023.
 Allows changing wallpapers with one tap.
@@ -117,22 +117,20 @@ function setupProjectFilters() {
   const filterButtons = document.querySelectorAll('[data-filter-btn]');
   const selectItems = document.querySelectorAll('[data-select-item]');
 
-  // Function to filter projects by category
+  // Function to filter projects by category (supports multiple categories per project)
   function filterProjects(category) {
     const projectItems = document.querySelectorAll('.project-item');
 
+    const filterCategory = category.toLowerCase();
+
     projectItems.forEach(item => {
-      // Get the category from the data attribute (case-insensitive comparison)
-      let itemCategory = item.getAttribute('data-category');
+      const data = item.getAttribute('data-category');
+      if (!data) return;
 
-      if (!itemCategory) return;
+      // data-category stores pipe-separated normalized categories
+      const itemCategories = data.split('|').map(c => c.trim().toLowerCase()).filter(Boolean);
 
-      // Make comparison case-insensitive
-      itemCategory = itemCategory.toLowerCase();
-      const filterCategory = category.toLowerCase();
-
-      // Show all items if "All" is selected, otherwise filter by category
-      if (filterCategory === 'all' || itemCategory === filterCategory) {
+      if (filterCategory === 'all' || itemCategories.includes(filterCategory)) {
         item.classList.add('active');
       } else {
         item.classList.remove('active');
@@ -187,11 +185,14 @@ function setupProjectFilters() {
 }
 
 // Function to normalize category for consistent filtering
+// Normalize category or categories (accepts string or array)
 function normalizeCategory(category) {
-  if (category.toLowerCase() === 'ai/ml') {
-    return 'ai/ml';
+  if (Array.isArray(category)) {
+    return category.map(c => (c && c.toLowerCase ? c.toLowerCase() : String(c).toLowerCase()).trim());
   }
-  return category.toLowerCase();
+  const c = category && category.toLowerCase ? category.toLowerCase() : String(category).toLowerCase();
+  if (c === 'ai/ml') return ['ai/ml'];
+  return [c];
 }
 
 // Modify generateProjectItems function to use normalized categories
@@ -208,9 +209,11 @@ function generateProjectItems() {
       listItem.className = 'project-item active';
       listItem.setAttribute('data-filter-item', '');
 
-      // Normalize category for consistent filtering
-      const normalizedCategory = normalizeCategory(project.category);
-      listItem.setAttribute('data-category', normalizedCategory);
+      // Normalize categories for consistent filtering (supports project.categories or fallback to project.category)
+      const categories = project.categories || (project.category ? [project.category] : []);
+      const normalizedCategories = normalizeCategory(categories);
+      // store as pipe-separated list for easy splitting in the DOM
+      listItem.setAttribute('data-category', normalizedCategories.join('|'));
       listItem.setAttribute('data-project-id', project.id);
 
       // Create project item HTML
@@ -223,8 +226,7 @@ function generateProjectItems() {
             <img src="${project.image}" alt="${project.title}" loading="lazy">
           </figure>
           <h3 class="project-title">${project.title}</h3>
-          <p class="project-category">${project.category.charAt(0).toUpperCase() + project.category.slice(1)}</p>
-        </a>
+            </a>
       `;
 
       projectList.appendChild(listItem);
