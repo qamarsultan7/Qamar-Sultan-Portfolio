@@ -85,12 +85,12 @@ const filterFunc = function (selectedValue) {
   for (let i = 0; i < filterItems.length; i++) {
     // Get the item's category and normalize it
     const itemCategory = filterItems[i].dataset.category.toLowerCase();
-    
+
     // Check if it matches the selected value
     if (selectedValue === "all") {
       filterItems[i].classList.add("active");
       hasVisibleItems = true;
-    } 
+    }
     // Special case handling for categories with special characters
     else if (
       (selectedValue === "ai/ml" && (itemCategory === "ai/ml" || itemCategory === "ai ml")) ||
@@ -220,22 +220,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("[data-form]")
-  const inputs = form.querySelectorAll("[data-form-input]")
-  const submitBtn = form.querySelector("[data-form-btn]")
-  const submitBtnText = submitBtn.querySelector("span")
-  const toast = document.getElementById("toast")
 
-  function checkFormValidity() {
-    const isValid = Array.from(inputs).every((input) => input.value.trim() !== "")
-    submitBtn.disabled = !isValid
-  }
+  // Only run toast/contact handling if the form exists on the page
+  if (form) {
+    const inputs = form.querySelectorAll("[data-form-input]")
+    const submitBtn = form.querySelector("[data-form-btn]")
+    const submitBtnText = submitBtn ? submitBtn.querySelector("span") : null
+    const toast = document.getElementById("toast")
 
-  inputs.forEach((input) => {
-    input.addEventListener("input", checkFormValidity)
-  })
+    function checkFormValidity() {
+      const isValid = Array.from(inputs).every((input) => input.value.trim() !== "")
+      if (submitBtn) submitBtn.disabled = !isValid
+    }
 
-  function showToast(message, isSuccess) {
-    toast.innerHTML = `
+    inputs.forEach((input) => {
+      input.addEventListener("input", checkFormValidity)
+    })
+
+    function showToast(message, isSuccess) {
+      if (!toast) return
+      toast.innerHTML = `
             <div class="toast__icon">
                 <svg fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                     <path d="m13 13h-2v-6h2zm0 4h-2v-2h2zm-1-15c-1.3132 0-2.61358.25866-3.82683.7612-1.21326.50255-2.31565 1.23915-3.24424 2.16773-1.87536 1.87537-2.92893 4.41891-2.92893 7.07107 0 2.6522 1.05357 5.1957 2.92893 7.0711.92859.9286 2.03098 1.6651 3.24424 2.1677 1.21325.5025 2.51363.7612 3.82683.7612 2.6522 0 5.1957-1.0536 7.0711-2.9289 1.8753-1.8754 2.9289-4.4189 2.9289-7.0711 0-1.3132-.2587-2.61358-.7612-3.82683-.5026-1.21326-1.2391-2.31565-2.1677-3.24424-.9286-.92858-2.031-1.66518-3.2443-2.16773-1.2132-.50254-2.5136-.7612-3.8268-.7612z" fill="#fff"></path>
@@ -248,47 +252,50 @@ document.addEventListener("DOMContentLoaded", () => {
                 </svg>
             </div>
         `
-    toast.className = `toast ${isSuccess ? "success" : "error"} show`
-    setTimeout(() => {
-      toast.className = "toast"
-    }, 3000)
+      toast.className = `toast ${isSuccess ? "success" : "error"} show`
+      setTimeout(() => {
+        toast.className = "toast"
+      }, 3000)
 
-    const closeBtn = toast.querySelector(".toast__close")
-    closeBtn.addEventListener("click", () => {
-      toast.className = "toast"
+      const closeBtn = toast.querySelector(".toast__close")
+      if (closeBtn) {
+        closeBtn.addEventListener("click", () => {
+          toast.className = "toast"
+        })
+      }
+    }
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault()
+      if (submitBtn) submitBtn.disabled = true
+      const originalText = submitBtnText ? submitBtnText.textContent : ""
+      if (submitBtnText) submitBtnText.textContent = "Sending..."
+
+      const formData = new FormData(form)
+      fetch(form.action, {
+        method: "POST",
+        body: formData,
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (data.success) {
+            showToast("Message sent successfully!", true)
+            form.reset()
+            checkFormValidity()
+          } else {
+            showToast("Unable to send message! Please try again.", false)
+          }
+        })
+        .catch((error) => {
+          console.error("Error:", error)
+          showToast("Unable to send message! Please try again.", false)
+        })
+        .finally(() => {
+          if (submitBtn) submitBtn.disabled = false
+          if (submitBtnText) submitBtnText.textContent = originalText
+        })
     })
   }
-
-  form.addEventListener("submit", (e) => {
-    e.preventDefault()
-    submitBtn.disabled = true
-    const originalText = submitBtnText.textContent
-    submitBtnText.textContent = "Sending..."
-
-    const formData = new FormData(form)
-    fetch(form.action, {
-      method: "POST",
-      body: formData,
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success) {
-          showToast("Message sent successfully!", true)
-          form.reset()
-          checkFormValidity()
-        } else {
-          showToast("Unable to send message! Please try again.", false)
-        }
-      })
-      .catch((error) => {
-        console.error("Error:", error)
-        showToast("Unable to send message! Please try again.", false)
-      })
-      .finally(() => {
-        submitBtn.disabled = false
-        submitBtnText.textContent = originalText
-      })
-  })
 })
 
 // Add an initial check for visible projects after the page loads
