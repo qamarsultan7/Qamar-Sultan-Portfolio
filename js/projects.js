@@ -121,14 +121,22 @@ function setupProjectFilters() {
   function filterProjects(category) {
     const projectItems = document.querySelectorAll('.project-item');
 
-    const filterCategory = category.toLowerCase();
+    let filterCategory = category.toLowerCase();
+    // Normalize "mobile apps" to "mobile app"
+    if (filterCategory === 'mobile apps') {
+      filterCategory = 'mobile app';
+    }
 
     projectItems.forEach(item => {
       const data = item.getAttribute('data-category');
       if (!data) return;
 
       // data-category stores pipe-separated normalized categories
-      const itemCategories = data.split('|').map(c => c.trim().toLowerCase()).filter(Boolean);
+      const itemCategories = data.split('|').map(c => {
+        let val = c.trim().toLowerCase();
+        if (val === 'mobile apps') return 'mobile app';
+        return val;
+      }).filter(Boolean);
 
       if (filterCategory === 'all' || itemCategories.includes(filterCategory)) {
         item.classList.add('active');
