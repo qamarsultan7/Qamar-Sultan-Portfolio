@@ -1,6 +1,21 @@
 // Project data model
 const projectsData = [
   {
+    id: 'CalEye',
+    title: 'CalEye',
+    category: 'mobile apps',
+    image: 'images/CalEye.png',
+    description: `Live on Google Play Store.
+An AI-powered nutrition tracker built for precision and a premium user experience.
+Achieved 95% food recognition accuracy and 85% portion/calorie estimation.
+Developed with Flutter using BLoC state management and a minimalist "Apple-style" UI.
+Features a high-concurrency FastAPI backend deployed on Microsoft Azure.
+Includes personalized goal tracking, interactive progress graphs, and smart reminders.
+Boosted Regional Dish detection accuracy by 15%.`,
+    technologies: ['Flutter', 'Dart', 'FastAPI', 'Azure', 'Generative AI'],
+    link: 'https://play.google.com/store/apps/details?id=com.caleye.caloriescounter'
+  },
+  {
     id: 'ListlyPrime',
     title: 'Listly Prime',
     category: 'mobile apps',
